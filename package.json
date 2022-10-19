@@ -1,0 +1,54 @@
+{
+  "name": "productoschain-backend",
+  "version": "1.0.0",
+  "description": "El backend del crud de productos usando la blockchain",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "DApp",
+    "backend",
+    "solidity",
+    "blockchain",
+    "goerli",
+    "nodejs",
+    "js",
+    "truffle",
+    "ganache-cli",
+    "crud",
+    "socket.io",
+    "web3"
+  ],
+  "author": "alvaro-7x",
+  "license": "ISC",
+  "dependencies": {
+    "cloudinary": "^1.31.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^8.5.1",
+    "socket.io": "^4.5.2",
+    "web3": "^1.7.5",
+    "web3-token": "^0.2.10"
+  },
+  "devDependencies": {
+    "@openzeppelin/test-helpers": "^0.5.16",
+    "@truffle/hdwallet-provider": "^2.0.14",
+    "eslint": "^8.25.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.3.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.0",
+    "ganache-cli": "^6.12.2",
+    "standard": "^17.0.0",
+    "truffle": "^5.5.27",
+    "truffle-assertions": "^0.9.2"
+  }
+}
