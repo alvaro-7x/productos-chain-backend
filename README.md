@@ -37,37 +37,37 @@ POST    http://localhost:4001/login
 GET     http://localhost:4001/verificar-token
 ```
 
- 1. Consultar la cantidad de gas requerido para procesar la transacción.
+ 2. Consultar la cantidad de gas requerido para procesar la transacción.
 ```
 POST    http://localhost:4001/consultar-gas
 ```
 
- 1. Listar todos los productos.
+ 3. Listar todos los productos.
 ```
 GET     http://localhost:4001/
 ```
 
- 1. Crear un nuevo producto.
+ 4. Crear un nuevo producto.
 ```
 POST    http://localhost:4001/
 ```
 
- 1. Obtener el producto con el **id**.
+ 5. Obtener el producto con el **id**.
 ```
 GET     http://localhost:4001/:id
 ```
 
- 1. Borrar el producto con el **id**.
+ 6. Borrar el producto con el **id**.
 ```
 DELETE  http://localhost:4001/:id
 ```
 
- 1. Borrar varios productos.
+ 7. Borrar varios productos.
 ```
 POST    http://localhost:4001/eliminar/
 ```
 
- 1. Actualizar el producto con el **id**.
+ 8. Actualizar el producto con el **id**.
 ```
 PUT     http://localhost:4001/:id
 ```
@@ -117,21 +117,21 @@ En producción
 * Instalar [Metamask](https://addons.mozilla.org/en-US/firefox/addon/ether-metamask/).
 
 * Crear un **Api key** y obtener el **Endpoint** de Infura
- 1. Diríjase a [infura.io](https://infura.io/) y cree una cuenta si no la tiene. 
- 1. Haga clic en Ethereum en el panel izquierdo.
- 1. Escriba el nombre de su proyecto y haga clic para crear el proyecto.
- 1. Esto debería crear un endpoint y un api key para su proyecto.
- 1. En la sección de endpoints seleccionar Gorli ó Goerli.
+  1. Diríjase a [infura.io](https://infura.io/) y cree una cuenta si no la tiene. 
+  2. Haga clic en Ethereum en el panel izquierdo.
+  3. Escriba el nombre de su proyecto y haga clic para crear el proyecto.
+  4. Esto debería crear un endpoint y un api key para su proyecto.
+  5. En la sección de endpoints seleccionar Gorli ó Goerli.
 
 * Obtener [ethers de prueba](https://faucets.chain.link/) de la tesnet de Goerli.
 
 * Configurar las siguientes variables en el archivo `.env`:
- 1. `MNEMONIC`:  La clave privada de 12 palabras que Metamask le ofrece al momento de crear su billetera/wallet.
- 1. `PROVIDER`: El endpoint de infiura.
- 1. `PROJECT_ID`: La api key creado en infiura.
- 1. `NETWORK_ID`: El número de la red/chainId de Goerli. (Goerli utiliza el número 5. [Ver lista](https://chainlist.org/), no se olvide habilitar la opción **Testnets**).
- 1. `PRIVATE_KEY`: Exportar la private key, de Metamask, de la cuenta que será utilizada para migrar el contrato. [Ver ejemplo](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key)
- 1. `CONTRACT_ADDRESS`: La direción del contrato.
+  1. `MNEMONIC`:  La clave privada de 12 palabras que Metamask le ofrece al momento de crear su billetera/wallet.
+  2. `PROVIDER`: El endpoint de infiura.
+  3. `PROJECT_ID`: La api key creado en infiura.
+  4. `NETWORK_ID`: El número de la red/chainId de Goerli. (Goerli utiliza el número 5. [Ver lista](https://chainlist.org/), no se olvide habilitar la opción **Testnets**).
+  5. `PRIVATE_KEY`: Exportar la private key, de Metamask, de la cuenta que será utilizada para migrar el contrato. [Ver ejemplo](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key)
+  6. `CONTRACT_ADDRESS`: La direción del contrato.
 
 
 * En el archivo `contrato/truffle-config.js`, del presente proyeco, en la sección de `networks` añadir:
