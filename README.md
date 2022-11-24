@@ -175,5 +175,5 @@ npx truffle test --compile-none
 Tome en cuenta que estas pruebas son ejecutas en un entorno de desarrollo.
 
 ## Ver proyecto
-[Clic aquí para ver el proyecto completo en funcionamiento](https://productos-chain.herokuapp.com/#/auth/login)
+[Clic aquí para ver el proyecto completo en funcionamiento](https://productos-chain.up.railway.app/#/auth/login)
 
