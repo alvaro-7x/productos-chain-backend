@@ -1,0 +1,1 @@
+ganache-cli -h 0.0.0.0 --deterministic  --networkId  1337

@@ -1,0 +1,68 @@
+version: '3'
+services:
+
+  ganache-development:
+    container_name: ganache-development
+    build:
+      context: ./ganache
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=development
+    networks:
+      - productoschain-net
+    ports:
+      - 8545:8545
+      - 1337:1337
+    deploy:
+      resources:
+        limits:
+          cpus: '0.3'
+          memory: 200M
+        reservations:
+          cpus: '0.2'
+          memory: 150M
+
+  migracion-development:
+    depends_on:
+      - ganache-development
+    container_name: migracion-development
+    build:
+      context: ./contrato
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=development
+    networks:
+      - productoschain-net
+    volumes:
+      - $PWD/contrato:/app
+
+  productoschain-backend:
+    depends_on:
+      - migracion-development
+    container_name: productoschain-backend
+    hostname: productoschain-backend
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args: [ "NODE_ENV=development" ]
+    environment:
+      - NODE_ENV=development
+    ports:
+      - 4001:4001
+    networks:
+      - productoschain-net
+    volumes:
+      - $PWD/contrato:/app/contrato
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '0.3'
+          memory: 200M
+        reservations:
+          cpus: '0.2'
+          memory: 100M
+
+networks:
+  productoschain-net:
+    driver: bridge

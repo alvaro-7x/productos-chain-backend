@@ -85,7 +85,8 @@ class ContratoProductosChain
   {
     const websocketProvider = (esProduccion())
       ? `${process.env.PROVIDER}/${process.env.PROJECT_ID}`
-      : 'ws://localhost:8545';
+      // : 'ws://localhost:8545';
+      : `ws://${process.env.PROVIDER_DEVELOPMENT}:8545`;
 
     return new Web3.providers.WebsocketProvider(websocketProvider);
   }

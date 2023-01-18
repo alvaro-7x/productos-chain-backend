@@ -11,7 +11,7 @@ const app = express();
 
 const server = require('http').createServer(app);
 
-const opcionesIO = esProduccion() ? {} : { cors: { origins: ['http://localhost:4200'] } };
+const opcionesIO = { cors: { origins: ['http://localhost:8080', 'http://localhost:8081'] } };
 
 const io = require('socket.io')(server, opcionesIO);
 
@@ -22,8 +22,12 @@ const producto = require('./routes/producto.route');
 
 const { socketProducto } = require('./sockets/socketProducto');
 
+const corsOptions = {
+  origin : ['http://localhost:8080', 'http://localhost:8081'],
+}
+
 // Uso de cors
-app.use(cors());
+app.use(cors(corsOptions));
 
 // subir archivos
 app.use(fileUpload({

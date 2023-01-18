@@ -154,6 +154,21 @@ npx truffle migrate --network goerli
 
 * Cuando la migración haya terminado de manera exitosa, se nos brindará información como la red en la que se desplego el contrato, el gas limit, el transaction hash, entre otros. Pero la informacion que es realmente importante es la dirección del contrato (**contract address**), el cual sera necesario reemplazar en el archivo **.env**.
 
+## Desplegar el proyecto con docker (en desarrollo)
+
+En la carpeta raiz del proyecto ejecute el siguiente comando:
+```
+docker-compose -f docker-compose.yaml up -d
+
+```
+El archivo `docker-compose.yaml` se encargará de:
+
+* Levantar el servidor ganache.
+* Realizar la migración del contrato (en desarrollo).
+* Levantar el servidor node.
+
+Sea paciente este proceso demora un par de minutos. No se olvide de reemplazar los datos de las variables en el archivo `.env`.
+
 
 ## ¿Y ahora que sigue?
 
@@ -175,5 +190,6 @@ npx truffle test --compile-none
 Tome en cuenta que estas pruebas son ejecutas en un entorno de desarrollo.
 
 ## Ver proyecto
-[Clic aquí para ver el proyecto completo en funcionamiento](https://productos-chain.herokuapp.com/#/auth/login)
+[Clic aquí para ver el proyecto completo en funcionamiento con frontend angular](https://productoschain-angular.up.railway.app)
+[Clic aquí para ver el proyecto completo en funcionamiento con frontend react](https://productoschain-react.up.railway.app)
 

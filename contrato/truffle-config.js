@@ -41,10 +41,16 @@
  * https://trufflesuite.com/docs/truffle/getting-started/using-the-truffle-dashboard/
  */
 
-require('dotenv').config();
+if (process.env.NODE_ENV === 'production')
+{
+  require('dotenv').config();
+  const { MNEMONIC, PROJECT_ID, PROVIDER, NETWORK_ID } = process.env;
+  const HDWalletProvider = require('@truffle/hdwallet-provider');
+}
 
-const { MNEMONIC, PROJECT_ID, PROVIDER, NETWORK_ID } = process.env;
-const HDWalletProvider = require('@truffle/hdwallet-provider');
+const hostDevelopment = 'ganache-development';
+// o localhost si no utilizas docker-compose
+// const hostDevelopment = 'localhost';
 
 module.exports = {
   /**
@@ -65,15 +71,19 @@ module.exports = {
     // options below to some value.
     //
     development: {
-     host: "127.0.0.1",     // Localhost (default: none)
+     // host: "127.0.0.1",     // Localhost (default: none)
+     host: hostDevelopment,     // Localhost (default: none)
      port: 8545,            // Standard Ethereum port (default: none)
      network_id: "1337",       // Any network (default: none)
     },
 
+    // DESCOMENTAR ESTAS LINEAS PARA PRODUCCION
+    /*
     goerli: {
       provider: () => new HDWalletProvider(MNEMONIC, `${PROVIDER}/${PROJECT_ID}`),
       network_id: NETWORK_ID,       // Goerli's id
     },
+    */
 
     // rinkeby: {
     //   provider: () => new HDWalletProvider(MNEMONIC, `https://rinkeby.infura.io/v3/${PROJECT_ID}`),
