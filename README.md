@@ -192,4 +192,3 @@ Tome en cuenta que estas pruebas son ejecutas en un entorno de desarrollo.
 ## Ver proyecto
 [Clic aquí para ver el proyecto completo en funcionamiento con frontend angular](https://productoschain-angular.up.railway.app)
 [Clic aquí para ver el proyecto completo en funcionamiento con frontend react](https://productoschain-react.up.railway.app)
-
